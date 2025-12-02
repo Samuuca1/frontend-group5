@@ -15,10 +15,15 @@ export default function ResultsPage() {
   const { total, share, transactions } = calculateBalances(expenses);
 
   return (
-    <>
+    <div className="space-y-4">
       <ResultSummary total={total} share={share} transactions={transactions} />
       <CurrencyConverter />
-      <button onClick={() => router.push("/")}>Back</button>
-    </>
+      <button 
+        onClick={() => router.push("/")}
+        className="px-3.75 py-2.5 rounded-lg bg-[#15b65e] text-white hover:bg-[#0c703b] active:scale-98"
+      >
+        Back
+      </button>
+    </div>
   );
 }

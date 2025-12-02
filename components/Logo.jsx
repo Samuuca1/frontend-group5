@@ -1,7 +1,9 @@
+import Image from "next/image";
+
 export default function Logo() {
   return (
-    <div style={{ fontSize: "28px", fontWeight: "bold", marginBottom: "10px" }}>
-      Logo placeholder
+    <div>
+      <Image src="/trip-expense-splitter-logo.svg" alt="Logo" width={100} height={100} />
     </div>
   );
 }

@@ -58,38 +58,50 @@ export default function CurrencyConverter() {
   const isDisabled = !amount || parseFloat(amount) <= 0 || isLoading;
 
   return (
-    <div style={{ marginTop: "30px" }}>
-      <h3>Currency Converter</h3>
-      {error && <p style={{ color: "red" }}>⚠️ {error}</p>}
-      <div style={{ display: "flex", gap: "10px", marginTop: "10px" }}>
+    <div className="mt-5 p-2.5 shadow-lg">
+      <h3 className="mt-4 mb-2 text-lg font-semibold text-[#333]">Currency Converter</h3>
+      {error && <p className="text-red-600">⚠️ {error}</p>}
+
+      <div className="overflow-x-auto flex gap-2.5 mt-2.5 items-center border rounded-lg border-gray-300">
         <input
           type="number"
           placeholder="Amount"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
+          className="m-1 p-1.5 border rounded-lg border-transparent focus:outline-none focus:ring-3 focus:ring-[#15b65e]"
         />
 
-        <select value={from} onChange={(e) => setFrom(e.target.value)}>
+        <select
+          value={from}
+          onChange={(e) => setFrom(e.target.value)}
+          className="p-1.5 border rounded-lg border-transparent focus:outline-none focus:ring-3 focus:ring-[#15b65e]"
+        >
           <option value="CAD">CAD</option>
           <option value="USD">USD</option>
           <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
           <option value="JPY">JPY</option>
         </select>
 
-        <span>→</span>
+        <span className="text-2xl text-[#15b65e]">→</span>
 
-        <select value={to} onChange={(e) => setTo(e.target.value)}>
+        <select
+          value={to}
+          onChange={(e) => setTo(e.target.value)}
+          className="p-1.5 border rounded-lg border-transparent focus:outline-none focus:ring-3 focus:ring-[#15b65e]"
+        >
           <option value="USD">USD</option>
           <option value="CAD">CAD</option>
           <option value="EUR">EUR</option>
           <option value="GBP">GBP</option>
+          <option value="JPY">JPY</option>
         </select>
       </div>
 
       {/* Display result or loading state */}
-      {isLoading && <p style={{ marginTop: "10px" }}>**Loading...**</p>}
+      {isLoading && <p className="mt-2.5">**Loading...**</p>}
       {converted && !isLoading && (
-        <p style={{ marginTop: "10px" }}>Result: **{converted}**</p>
+        <p className="mt-2.5">Result: **<span className="font-semibold">{converted}</span>**</p>
       )}
     </div>
   );

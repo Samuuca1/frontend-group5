@@ -20,8 +20,8 @@ export default function HomePage() {
   };
 
   return (
-    <div className="container">
-      <h1>Trip Expense Splitter</h1>
+    <div className="container space-y-4">
+      <h1 className="text-3xl font-bold text-[#333]">Trip Expense Splitter</h1>
 
       <ParticipantForm onAdd={handleAddParticipant} />
 
@@ -37,7 +37,13 @@ export default function HomePage() {
           query: { data: JSON.stringify(expenses) },
         }}
       >
-        <button>Calculate Results</button>
+        <button 
+          className={`px-3.75 py-2.5 rounded-lg text-white 
+            ${participants.length === 0 ? "bg-[#ccc]" : " bg-[#15b65e] hover:bg-[#0c703b] active:scale-98"}`}
+          disabled={participants.length === 0}
+        >
+          Calculate Results
+        </button>
       </Link>
     </div>
   );
