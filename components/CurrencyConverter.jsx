@@ -50,7 +50,7 @@ export default function CurrencyConverter() {
   };
 
   useEffect(() => {
-    if (parseFloat(amount) > 0) {
+    if (parseFloat(amount)) {
       handleConvert();
     }
   }, [amount, from, to]);
