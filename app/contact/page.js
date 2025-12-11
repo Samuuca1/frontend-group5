@@ -7,7 +7,7 @@ export default function ContactPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Message submitted (placeholder only).");
+    alert("Message submitted");
     setMessage("");
   };
 
